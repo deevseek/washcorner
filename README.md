@@ -1,4 +1,6 @@
 WASH CORNER - Point of Sale System
+sebelum gunakan aplikasi saya silahkan tolong donasi se iklas nya buat saya hidup
+https://saweria.co/Adiiiii
 🧼 Tentang Aplikasi
 Wash Corner adalah aplikasi Point of Sale (POS) untuk usaha pencucian kendaraan (car & motorcycle wash).
 Aplikasi ini mendukung manajemen transaksi, pelanggan, layanan, karyawan, inventaris, serta notifikasi melalui WhatsApp.
