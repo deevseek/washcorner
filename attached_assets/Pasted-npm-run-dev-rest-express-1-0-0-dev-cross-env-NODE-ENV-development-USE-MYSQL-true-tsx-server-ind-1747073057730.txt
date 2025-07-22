@@ -1,0 +1,52 @@
+npm run dev
+
+> rest-express@1.0.0 dev
+> cross-env NODE_ENV=development USE_MYSQL=true tsx server/index.ts
+
+Environment: development
+USE_MYSQL dari env: true
+USE_MYSQL value: true
+🚀 Inisialisasi database...
+USE_MYSQL dari db-config: true
+USE_MYSQL dari environment: true
+Nilai useMySQL yang digunakan: true
+🔄 Mencoba menggunakan database MySQL...
+Mencoba koneksi ke MySQL dengan konfigurasi:
+- Host: localhost
+- Port: 3306
+- User: root
+- Database: wash_corner
+Initializing default roles and permissions...
+Error initializing roles and permissions: TypeError: Cannot read properties of undefined (reading 'select')
+    at DatabaseStorage.getRoleByName (c:\xampp\htdocs\WashCorner\server\database-storage.ts:853:29)
+    at initializeRolesAndPermissions (c:\xampp\htdocs\WashCorner\server\routes.ts:60:40)
+    at registerRoutes (c:\xampp\htdocs\WashCorner\server\routes.ts:217:9)
+    at <anonymous> (c:\xampp\htdocs\WashCorner\server\index.ts:40:24)
+    at <anonymous> (c:\xampp\htdocs\WashCorner\server\index.ts:70:1)
+Error initializing default users: TypeError: Cannot read properties of undefined (reading 'select')
+    at DatabaseStorage.getUserByUsername (c:\xampp\htdocs\WashCorner\server\database-storage.ts:132:29)
+    at initializeDefaultUsers (c:\xampp\htdocs\WashCorner\server\routes.ts:167:41)
+    at registerRoutes (c:\xampp\htdocs\WashCorner\server\routes.ts:218:9)
+    at <anonymous> (c:\xampp\htdocs\WashCorner\server\index.ts:40:18)
+Sistem notifikasi siap digunakan
+✅ Koneksi MySQL berhasil dibuat
+✅ Database MySQL siap digunakan
+1:00:41 AM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+1:02:30 AM [express] GET /api/user 401 in 12ms :: {"message":"Not authenticated"}
+1:03:06 AM [express] POST /api/login 500 in 1141ms :: {"message":"Unknown column 'role' in 'field li…
+Error: Unknown column 'role' in 'field list'
+    at PromiseConnection.query (C:\xampp\htdocs\WashCorner\node_modules\mysql2\lib\promise\connection.js:29:22)
+    at MySql2PreparedQuery.execute (file:///C:/xampp/htdocs/WashCorner/node_modules/drizzle-orm/mysql2/session.js:75:33)
+    at MySqlSelectBase.execute (file:///C:/xampp/htdocs/WashCorner/node_modules/drizzle-orm/mysql-core/query-builders/select.js:746:27)
+    at MySqlSelectBase.then (file:///C:/xampp/htdocs/WashCorner/node_modules/drizzle-orm/query-promise.js:21:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+1:03:11 AM [express] POST /api/login 500 in 22ms :: {"message":"Unknown column 'role' in 'field list…
+Error: Unknown column 'role' in 'field list'
+    at PromiseConnection.query (C:\xampp\htdocs\WashCorner\node_modules\mysql2\lib\promise\connection.js:29:22)
+    at MySql2PreparedQuery.execute (file:///C:/xampp/htdocs/WashCorner/node_modules/drizzle-orm/mysql2/session.js:75:33)
+    at MySqlSelectBase.execute (file:///C:/xampp/htdocs/WashCorner/node_modules/drizzle-orm/mysql-core/query-builders/select.js:746:27)
+    at MySqlSelectBase.then (file:///C:/xampp/htdocs/WashCorner/node_modules/drizzle-orm/query-promise.js:21:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

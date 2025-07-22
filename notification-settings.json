@@ -1,0 +1,10 @@
+{
+  "defaultPhone": "6285191188319",
+  "enableWhatsapp": true,
+  "templates": {
+    "pending": "*Wash Corner - Status Cucian* ⏳\n\nHalo {customerName},\n\nKendaraan Anda dengan plat nomor *{licensePlate}* saat ini sedang menunggu untuk dicuci.\n\n*Layanan:*\n{servicesList}\n\n*Kode Tracking:* {trackingCode}\n\nAnda dapat mengecek status cucian Anda melalui link berikut:\n{trackingUrl}\n\nTerima kasih telah menggunakan jasa Wash Corner!",
+    "in_progress": "*Wash Corner - Status Cucian* 🔧\n\nHalo {customerName},\n\nKendaraan Anda dengan plat nomor *{licensePlate}* saat ini sedang dikerjakan.\n\n*Layanan:*\n{servicesList}\n\n*Kode Tracking:* {trackingCode}\n\nAnda dapat mengecek status cucian Anda melalui link berikut:\n{trackingUrl}\n\nTerima kasih telah menggunakan jasa Wash Corner!",
+    "completed": "*Wash Corner - Status Cucian* ✅\n\nHalo {customerName},\n\nKendaraan Anda dengan plat nomor *{licensePlate}* telah selesai dikerjakan dan siap untuk diambil.\n\n*Layanan:*\n{servicesList}\n\n*Kode Tracking:* {trackingCode}\n\nAnda dapat mengecek status cucian Anda melalui link berikut:\n{trackingUrl}\n\nTerima kasih telah menggunakan jasa Wash Corner!",
+    "cancelled": "*Wash Corner - Status Cucian* ❌\n\nHalo {customerName},\n\nKami informasikan bahwa cucian untuk kendaraan Anda dengan plat nomor *{licensePlate}* telah dibatalkan.\n\n*Layanan:*\n{servicesList}\n\n*Kode Tracking:* {trackingCode}\n\nJika Anda memiliki pertanyaan, silakan hubungi kami.\n\nTerima kasih telah menggunakan jasa Wash Corner!"
+  }
+}

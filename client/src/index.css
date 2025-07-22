@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fixed Sidebar Styles */
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 186 100% 42%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+  
+  /* Chart colors */
+  --chart-1: 221.2 83.2% 53.3%;
+  --chart-2: 186 100% 42%;
+  --chart-3: 111 100% 42%;
+  --chart-4: 43 100% 52%;
+  --chart-5: 0 84.2% 60.2%;
+
+  /* Sidebar specific colors */
+  --sidebar-background: 217 33% 17%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 221.2 83.2% 53.3%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 186 100% 42%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 225 31% 25%;
+  --sidebar-ring: 224 71.4% 4.1%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 186 100% 42%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 217.2 91.2% 59.8%;
+  
+  /* Chart colors remain the same in dark mode */
+  
+  /* Sidebar specific colors in dark mode */
+  --sidebar-background: 214 35% 15%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 217.2 91.2% 59.8%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 186 100% 42%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 217.2 32.6% 17.5%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .sidebar-active {
+    @apply bg-primary text-white hover:bg-primary hover:text-white;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center space-x-2 px-6 py-3 text-sidebar-foreground hover:bg-sidebar-accent/10 hover:text-white transition-colors;
+  }
+  
+  .sidebar-section {
+    @apply px-4 py-2 text-xs text-neutral-200 uppercase tracking-wider;
+  }
+
+  /* Custom mini calendar styles */
+  .mini-calendar .rdp {
+    --rdp-cell-size: 24px !important;
+    --rdp-accent-color: hsl(var(--primary));
+    --rdp-background-color: hsl(var(--primary) / 0.2);
+    margin: 0;
+  }
+
+  .mini-calendar .rdp-months {
+    justify-content: center;
+  }
+
+  .mini-calendar .rdp-month {
+    max-width: 100%;
+    width: 200px;
+  }
+
+  .mini-calendar .rdp-caption {
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 2px;
+  }
+
+  .mini-calendar .rdp-head_cell,
+  .mini-calendar .rdp-cell {
+    padding: 0;
+    height: var(--rdp-cell-size);
+    width: var(--rdp-cell-size);
+  }
+
+  .mini-calendar .rdp-head_cell {
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+
+  .mini-calendar .rdp-button {
+    width: var(--rdp-cell-size);
+    height: var(--rdp-cell-size);
+    font-size: 0.7rem;
+  }
+
+  .mini-calendar .rdp-day_today:not(.rdp-day_outside) {
+    font-weight: bold;
+    color: hsl(var(--primary));
+  }
+
+  .mini-calendar .rdp-nav {
+    padding: 0;
+  }
+
+  .mini-calendar .rdp-caption_label {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Print styling */
+  @media print {
+    /* Sembunyikan semua elemen */
+    body * {
+      visibility: hidden;
+    }
+
+    /* Hanya tampilkan dialog receipt dan elemen yang di dalamnya */
+    .printable,
+    .printable * {
+      visibility: visible !important;
+    }
+
+    /* Posisikan receipt di tengah halaman */
+    .printable {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      margin: 0 auto !important;
+      width: 100% !important;
+      max-width: 380px !important;
+      padding: 0 !important;
+    }
+
+    /* Sembunyikan tombol cetak pada nota */
+    .receipt-print-button {
+      display: none !important;
+    }
+
+    /* Sembunyikan header dan elemen lain yang tidak perlu dicetak */
+    header, nav, .sidebar, .topnav, footer, .no-print {
+      display: none !important;
+    }
+
+    /* Hapus bayangan dan efek styling yang tidak perlu */
+    .printable {
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    /* Memastikan background dan borders tercetak */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    
+    /* Mengatasi masalah page-breaks */
+    .printable {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+    
+    /* Size spesifik untuk paper */
+    @page {
+      size: 80mm 297mm;
+      margin: 0;
+    }
+  }
+}

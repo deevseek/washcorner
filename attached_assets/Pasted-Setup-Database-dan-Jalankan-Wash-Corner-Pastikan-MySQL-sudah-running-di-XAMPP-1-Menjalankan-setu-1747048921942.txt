@@ -1,0 +1,88 @@
+Setup Database dan Jalankan Wash Corner
+
+Pastikan MySQL sudah running di XAMPP!
+
+1. Menjalankan setup database...
+Setup database MySQL untuk Wash Corner...
+Menghubungkan ke server MySQL...
+Berhasil terhubung ke server MySQL
+Memeriksa database "wash_corner"...
+Database "wash_corner" siap digunakan
+Membuat tabel-tabel database...
+Membuat data default...
+Error saat setup database: Error: Unknown column 'role_id' in 'field list'
+    at PromiseConnection.query (C:\xampp\htdocs\WashCorner\node_modules\mysql2\lib\promise\connection.js:29:22)
+    at main (C:\xampp\htdocs\WashCorner\setup-mysql.cjs:214:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: '\n' +
+    '        INSERT INTO users (username, password, email, name, role_id) VALUES\n' +
+    "        ('admin', '$2b$10$zrBhh09ij6RA3Pu65Hxb5OuQgZVZVxpr9jTepgSuHwbAvaXKJV5m6', 'admin@washcorner.com', 'Administrator', 1),\n" +
+    "        ('cashier', '$2b$10$rO6i/rAb3YSZjRRVIGBPZeIFe7Ucn/d3HwW9OM.sZ2qGafTNC0DEG', 'cashier@washcorner.com', 'Kasir', 3)\n" +
+    '      ',
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'role_id' in 'field list'"
+}
+
+2. Menyalin file konfigurasi...
+        1 file(s) copied.
+
+3. Menjalankan aplikasi...
+Environment: development
+USE_MYSQL dari env: true
+USE_MYSQL value: true
+🚀 Inisialisasi database...
+USE_MYSQL dari db-config: true
+USE_MYSQL dari environment: true
+Nilai useMySQL yang digunakan: true
+🔄 Mencoba menggunakan database MySQL...
+Mencoba koneksi ke MySQL dengan konfigurasi:
+- Host: localhost
+- Port: 3306
+- User: root
+- Database: wash_corner
+Error initializing database: TypeError: Cannot read properties of undefined (reading 'select')
+    at DatabaseStorage.getUserByUsername (C:\xampp\htdocs\WashCorner\server\database-storage.ts:121:29)
+    at DatabaseStorage.initializeDatabase (C:\xampp\htdocs\WashCorner\server\database-storage.ts:95:36)
+    at new DatabaseStorage (C:\xampp\htdocs\WashCorner\server\database-storage.ts:88:10)
+    at <anonymous> (C:\xampp\htdocs\WashCorner\server\storage.ts:1502:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Initializing default roles and permissions...
+Error initializing roles and permissions: TypeError: Cannot read properties of undefined (reading 'select')
+    at DatabaseStorage.getRoleByName (C:\xampp\htdocs\WashCorner\server\database-storage.ts:842:29)
+    at initializeRolesAndPermissions (C:\xampp\htdocs\WashCorner\server\routes.ts:60:40)
+    at registerRoutes (C:\xampp\htdocs\WashCorner\server\routes.ts:217:9)
+    at <anonymous> (C:\xampp\htdocs\WashCorner\server\index.ts:40:24)
+    at <anonymous> (C:\xampp\htdocs\WashCorner\server\index.ts:70:1)
+Error initializing default users: TypeError: Cannot read properties of undefined (reading 'select')
+    at DatabaseStorage.getUserByUsername (C:\xampp\htdocs\WashCorner\server\database-storage.ts:121:29)
+    at initializeDefaultUsers (C:\xampp\htdocs\WashCorner\server\routes.ts:167:41)
+    at registerRoutes (C:\xampp\htdocs\WashCorner\server\routes.ts:218:9)
+    at async <anonymous> (C:\xampp\htdocs\WashCorner\server\index.ts:40:18)
+Sistem notifikasi siap digunakan
+✅ Koneksi MySQL berhasil dibuat
+✅ Database MySQL siap digunakan
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen ENOTSUP: operation not supported on socket 0.0.0.0:5000
+    at Server.setupListenHandle [as _listen2] (node:net:1917:21)
+    at listenInCluster (node:net:1996:12)
+    at node:net:2205:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1975:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'ENOTSUP',
+  errno: -4049,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 5000
+}
+
+Node.js v22.15.0
+Press any key to continue . . .

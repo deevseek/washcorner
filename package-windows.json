@@ -1,0 +1,14 @@
+{
+  "name": "rest-express",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development USE_MYSQL=true tsx server/index-windows.ts",
+    "dev:pg": "cross-env NODE_ENV=development USE_MYSQL=false tsx server/index-windows.ts",
+    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "check": "tsc",
+    "db:push": "drizzle-kit push"
+  }
+}
