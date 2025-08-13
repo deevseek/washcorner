@@ -31,7 +31,7 @@ Backend: Node.js, Express.js
 
 Frontend: Next.js, React, Vue.js
 
-Database: MySQL (Windows/XAMPP) atau PostgreSQL (Replit)
+Database: MySQL (Windows/XAMPP) atau PostgreSQL
 
 🚀 Cara Menjalankan Aplikasi
 Cara termudah menjalankan aplikasi:
