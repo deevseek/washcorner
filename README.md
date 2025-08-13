@@ -62,7 +62,6 @@ Mengonfigurasi aplikasi dengan benar
 
 Menjalankan dengan parameter yang sesuai
 
-🔁 Jika menggunakan Replit, aplikasi akan menggunakan PostgreSQL.
 🪟 Jika menggunakan Windows, aplikasi akan berjalan dengan MySQL + XAMPP.
 
 📄 Dokumentasi Lengkap
